@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.AddExpensePopupController">
+	<top>
+		<Label text="Add Expense" BorderPane.alignment="CENTER">
+			<font>
+				<Font name="System Bold" size="30.0" />
+			</font>
+		</Label>
+	</top>
+	<center>
+		<VBox alignment="TOP_CENTER" prefHeight="289.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+			<children>
+            <Separator prefWidth="200.0" />
+				<HBox alignment="CENTER" prefHeight="81.0" prefWidth="400.0">
+					<children>
+						<Label text="Amount:">
+							<font>
+								<Font size="15.0" />
+							</font>
+						</Label>
+						<Pane prefHeight="81.0" prefWidth="88.0" />
+                  <Label text="\$">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+						<TextField fx:id="tfAmount" prefHeight="25.0" prefWidth="125.0" promptText="Enter Amount" />
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+					<children>
+						<Label text="Memo:">
+							<font>
+								<Font size="15.0" />
+							</font>
+						</Label>
+						<Pane prefHeight="100.0" prefWidth="31.0" />
+						<TextArea fx:id="taMemo" prefHeight="200.0" prefWidth="200.0" promptText="Add a memo for this expense" wrapText="true" />
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="46.0" prefWidth="400.0">
+					<children>
+						<ComboBox fx:id="cbBudgetAdmin" prefHeight="25.0" prefWidth="170.0" promptText="Select Budget Admin" />
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="49.0" prefWidth="400.0">
+					<children>
+						<ComboBox fx:id="cdCardType" onAction="#comboBoxCardSelect" prefHeight="25.0" prefWidth="186.0" promptText="Select PCard or Credit Card" />
+						<TextField fx:id="tfCardNumber" prefHeight="25.0" prefWidth="125.0" promptText="Card Number">
+							<HBox.margin>
+								<Insets left="20.0" />
+							</HBox.margin>
+						</TextField>
+					</children>
+				</HBox>
+				<ComboBox fx:id="cdExpenseType" prefHeight="25.0" prefWidth="152.0" promptText="Select Expense Type" />
+      		<Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Separator>
+			</children>
+		</VBox>
+	</center>
+	<bottom>
+		<HBox alignment="TOP_CENTER" prefHeight="36.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="btSubmit" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Submit" />
+				<Button fx:id="btCancel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Cancel">
+					<HBox.margin>
+						<Insets left="10.0" />
+					</HBox.margin>
+				</Button>
+			</children>
+		</HBox>
+	</bottom>
+</BorderPane>

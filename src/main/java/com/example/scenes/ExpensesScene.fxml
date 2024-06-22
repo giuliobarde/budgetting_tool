@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ExpensesController">
+	<children>
+		<HBox layoutX="10.0" layoutY="7.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="580.0">
+			<children>
+				<Label fx:id="lbWelcome" minHeight="-Infinity" minWidth="-Infinity" text="Welcome user!">
+					<font>
+						<Font name="Arial" size="12.0" />
+					</font>
+				</Label>
+				<Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="39.0" prefWidth="413.0" HBox.hgrow="ALWAYS" />
+            <Button fx:id="btSystemOptions" minWidth="-Infinity" mnemonicParsing="false" text="System Options">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+				<Button fx:id="btLogOut" minWidth="-Infinity" mnemonicParsing="false" text="Logout" />
+			</children>
+		</HBox>
+		<VBox alignment="TOP_CENTER" layoutY="60.0" prefHeight="340.0" prefWidth="100.0">
+			<children>
+				<Button fx:id="btMessages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" style="-fx-background-radius: 0;" text="Messages" />
+				<Button fx:id="btPCard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" style="-fx-background-radius: 0;" text="P-Card" />
+				<Button fx:id="btExpenses" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" style="-fx-background-radius: 0;" text="Expenses" />
+				<Button fx:id="btPCardRequests" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" style="-fx-background-radius: 0;" text="P-Card Requests" textAlignment="CENTER" wrapText="true" />
+				<Button fx:id="btRbRequests" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" style="-fx-background-radius: 0;" text="Reimbursement Requests" textAlignment="CENTER" wrapText="true" />
+			</children>
+		</VBox>
+		<HBox layoutX="10.0" layoutY="26.0" prefHeight="25.0" prefWidth="412.0">
+			<children>
+				<Label fx:id="lbRole" text="Role: Default">
+					<font>
+						<Font name="Arial" size="12.0" />
+					</font>
+				</Label>
+			</children>
+		</HBox>
+		<BorderPane layoutX="100.0" layoutY="60.0" prefHeight="300.0" prefWidth="500.0">
+			<center>
+				<StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+					<children>
+						<TableView fx:id="tvExpenses" prefHeight="200.0" prefWidth="200.0">
+							<placeholder>
+								<Label text="No expenses detected. Add expenses using the 'Add Expenses' button at the bottom." />
+							</placeholder>
+							<columns>
+								<TableColumn fx:id="tcApprovalStatus" maxWidth="1.7976931348623157E308" prefWidth="110.0" reorderable="false" resizable="false" sortable="false" text="Approval Status" />
+								<TableColumn fx:id="tcExpenseType" maxWidth="1.7976931348623157E308" prefWidth="110.0" reorderable="false" resizable="false" sortable="false" text="Expense Type" />
+								<TableColumn fx:id="tcAmount" maxWidth="1.7976931348623157E308" prefWidth="95.0" reorderable="false" resizable="false" sortable="false" text="Amount" />
+								<TableColumn fx:id="tcDate" reorderable="false" resizable="false" sortable="false" text="Date" />
+								<TableColumn fx:id="tcMemo" minWidth="-Infinity" prefWidth="105.0" reorderable="false" resizable="false" sortable="false" text="Memo" />
+							</columns>
+						</TableView>
+					</children>
+				</StackPane>
+			</center>
+		</BorderPane>
+		<Button fx:id="btAddExpense" layoutX="200.0" layoutY="360.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="130.0" style="-fx-background-radius: 0;" text="Add Expense" />
+		<Button fx:id="btSortExpenses" layoutX="365.0" layoutY="360.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="130.0" style="-fx-background-radius: 0;" text="Sort Expenses" textAlignment="CENTER" wrapText="true" />
+		<Label layoutX="120.0" layoutY="40.0" text="Double click on an expense to view its details." />
+      <Label fx:id="lbYearlyLimit" layoutX="400.0" layoutY="40.0" text="Yearly Expense Limit: " />
+	</children>
+</AnchorPane>

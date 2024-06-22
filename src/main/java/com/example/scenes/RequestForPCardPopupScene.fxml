@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.RequestForPCardPopupController">
+   <top>
+      <Label text="Request for PCard" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="81.0" prefWidth="400.0">
+               <children>
+                  <Label text="Memo:" />
+                  <Pane prefHeight="100.0" prefWidth="31.0" />
+                  <TextArea fx:id="taMemo" prefHeight="200.0" prefWidth="200.0" promptText="Add a memo for this PCard request" wrapText="true" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="81.0" prefWidth="400.0">
+               <children>
+                  <Label prefHeight="39.0" prefWidth="91.0" text="Person to assign P Card to:" textAlignment="CENTER" wrapText="true" />
+                  <Pane prefHeight="100.0" prefWidth="31.0" />
+                  <ComboBox fx:id="cbEmployees" prefWidth="150.0" promptText="Select Employee" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="400.0">
+               <children>
+                  <Label text="Daily Limit:" />
+                  <Pane prefHeight="35.0" prefWidth="72.0" />
+                  <TextField fx:id="tfDailyLimit" promptText="Enter Daily Limit" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="400.0">
+               <children>
+                  <Label text="Monthly Limit:" />
+                  <Pane prefHeight="36.0" prefWidth="54.0" />
+                  <TextField fx:id="tfMonthlyLimit" promptText="Enter Monthly Limit" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="400.0">
+               <children>
+                  <Label fx:id="lbPCardAdmin" text="Will be sent to: [Insert P Card Admin]">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="TOP_CENTER" prefHeight="56.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btSubmit" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Submit" />
+            <Button fx:id="btCancel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Cancel">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

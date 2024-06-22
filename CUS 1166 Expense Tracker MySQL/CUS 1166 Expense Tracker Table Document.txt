@@ -1,0 +1,40 @@
+Employee(employeeId,password,fname,lname,departmentId)
+employeeId is PK
+departmentId is FK relating to departmentId in Department
+
+budgets_for(employeeId,departmentId)
+employeeId,departmentId is PK
+employeeId is FK relating to employeeId in Employee
+departmentId is FK relating to departmentId in Department
+
+heads(employeeId,departmentId)
+employeeId,departmentId is PK
+employeeId is FK relating to employeeId in Employee
+departmentId is FK relating to departmentId in Department
+
+approves(employeeId, expenseId,comment,date)
+employeeId, expenseId is PK
+employeeId is FK relating to employeeId in Employee
+expenseId is FK relating to expenseId in Expense
+
+employee_views_message(employeeId,messageId,viewStatus)
+employeeId, messageId is PK
+employeeID is FK relating to employeeid in Employee
+messageId is FK relating to messageId in Message
+
+University(universityId,universityName)
+universityId is PK
+
+Department(departmentId,universityId,dname)
+departmentId,universityId is PK
+universityId is FK relating to universityId in University
+
+Expense(expenseId,employeeId,approvalStatus,amount,expenseType,date,memo,cardType,cardNumber)
+expenseId is PK
+employeeId is FK relating to employeeId in Employee
+
+PCard(PCardId,employeeId,DailyLimit,MonthlyLimit,adminId)
+adminId is FK relating to employeeId in Employee
+
+Message(messageId,date,headerText,bodyText,creatorId)
+creatorId is FK relating to employeeId in Employee

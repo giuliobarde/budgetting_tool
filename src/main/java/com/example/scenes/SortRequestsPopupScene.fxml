@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.SortRequestsPopupController">
+	<top>
+		<Label text="Sort Requests" BorderPane.alignment="CENTER">
+			<font>
+				<Font name="System Bold" size="30.0" />
+			</font>
+		</Label>
+	</top>
+	<center>
+		<VBox alignment="TOP_CENTER" prefHeight="371.0" prefWidth="400.0" BorderPane.alignment="TOP_CENTER">
+			<children>
+				<Separator prefWidth="200.0" />
+				<HBox alignment="CENTER" prefHeight="53.0" prefWidth="400.0">
+					<children>
+						<Label text="Approval Status:">
+							<opaqueInsets>
+								<Insets />
+							</opaqueInsets>
+							<HBox.margin>
+								<Insets right="10.0" />
+							</HBox.margin>
+						</Label>
+						<CheckBox fx:id="chbApproved" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" text="Approved">
+							<padding>
+								<Insets left="5.0" />
+							</padding>
+						</CheckBox>
+						<CheckBox fx:id="chbPending" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" text="Pending">
+							<padding>
+								<Insets left="5.0" />
+							</padding>
+						</CheckBox>
+						<CheckBox fx:id="chbReturned" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" text="Returned" />
+					</children>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</HBox>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="400.0">
+               <children>
+                  <Label fx:id="lbFrom" text="From:">
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tfFrom" promptText="Enter name of sender" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="400.0">
+               <children>
+                  <Label text="Contains in message:">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tfContains" prefHeight="25.0" prefWidth="189.0" promptText="Enter text that message contains" />
+               </children>
+            </HBox>
+				<Separator prefWidth="200.0" />
+				<HBox alignment="CENTER" prefHeight="83.0" prefWidth="400.0">
+					<children>
+						<Label text="Date:">
+							<padding>
+								<Insets right="7.0" />
+							</padding>
+						</Label>
+						<DatePicker fx:id="dpDate" editable="false" />
+						<VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+							<children>
+								<RadioButton fx:id="rbDay" mnemonicParsing="false" text="Day">
+									<VBox.margin>
+										<Insets bottom="5.0" />
+									</VBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tgDate" />
+                           </toggleGroup>
+								</RadioButton>
+								<RadioButton fx:id="rbMonth" mnemonicParsing="false" text="Month" toggleGroup="$tgDate">
+									<VBox.margin>
+										<Insets bottom="5.0" left="16.0" />
+									</VBox.margin>
+								</RadioButton>
+								<RadioButton fx:id="rbYear" mnemonicParsing="false" text="Year" toggleGroup="$tgDate">
+									<VBox.margin>
+										<Insets bottom="3.0" left="3.0" />
+									</VBox.margin>
+								</RadioButton>
+                        <RadioButton fx:id="rbAllDates" mnemonicParsing="false" selected="true" text="All Dates" toggleGroup="$tgDate">
+                           <padding>
+                              <Insets left="26.0" />
+                           </padding>
+                        </RadioButton>
+							</children>
+						</VBox>
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="55.0" prefWidth="400.0">
+					<children>
+						<Label text="Order results by:">
+							<padding>
+								<Insets right="7.0" />
+							</padding>
+						</Label>
+						<ComboBox fx:id="cbOrderBy" prefWidth="150.0" promptText="Select from menu" visibleRowCount="4" />
+						<VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+							<children>
+								<RadioButton fx:id="rbAscending" mnemonicParsing="false" selected="true" text="Ascending">
+									<VBox.margin>
+										<Insets bottom="5.0" />
+									</VBox.margin>
+									<toggleGroup>
+										<ToggleGroup fx:id="tgOrder" />
+									</toggleGroup>
+								</RadioButton>
+								<RadioButton fx:id="rbDescending" mnemonicParsing="false" selected="true" text="Descending" toggleGroup="$tgOrder">
+									<VBox.margin>
+										<Insets left="6.0" />
+									</VBox.margin>
+								</RadioButton>
+							</children>
+						</VBox>
+					</children>
+				</HBox>
+				<Separator prefWidth="200.0" />
+			</children>
+		</VBox>
+	</center>
+	<bottom>
+		<HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="btSubmit" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Submit" />
+				<Button fx:id="btCancel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Cancel">
+					<HBox.margin>
+						<Insets left="10.0" />
+					</HBox.margin>
+				</Button>
+			</children>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+		</HBox>
+	</bottom>
+</BorderPane>

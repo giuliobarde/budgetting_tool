@@ -1,0 +1,109 @@
+May Tasks
+// features
+- have option for system admin to add new employee (will need to make GUI for the form + button) (GUI DONE by Ivan 5/3) - Code done by Giulio [DONE] 5/4
+- Have abilty for person who requested a pcard view their request from pcard (will need to connect to what a pcard admin would see but no approve/deny 
+	- Ivan [Done] 5/3
+- Add approved/returned requests in reinbursement/pcard requests table (rework query that returns expenses/requests) - [Stephen] [DONE] 5/4
+	- can approve/deny ONLY if approvalStatus = "Pending" (rework hiding options to include) - [Stephen] [DONE] 5/4
+- Have ability to sort: - Ivan
+	- messages in messages (list of Messages) [DONE] 5/4
+	- p card expenses in pcard (list of Expenses) [DONE] 5/4
+	- pcard requests in pcard requests (list of Requests) [DONE] 5/4
+	- reinbursement request in reinbursements ( list of Expenses ) [DONE] 5/4
+- Have ability in System Options to change password
+
+// constraints
+- only heads of department and budget admins can request p cards for either themselves or others in their department
+	(rework requesting Pcard to only show for budget admins, head of department) - Ivan [Done] 5/3
+	(add Head class (head of department), add check at auth user to assign Head to the SessionUser)
+	(rework request for pcard GUI with following options) - Ivan [DONE] 5/3
+		- to select person in their department who has no pcard or pcard request for them [DONE] 5/3 
+		- give daily limit + monthly limit in request instead of pcard admin entering it themself [DONE] 5/3
+		
+
+// ran out of things to do
+- find ways to break program 
+- comment parts of code 
+- make req doc v2
+	  
+// future stuff that can be written in req doc v2
+- ability for budget admin to create/select policy for their department 
+- ability for system admin to make new departments, other stuff,reset password
+- add account settings to change password, other stuff that might matter
+
+----------------------------------------------------------------------------------------
+
+- Meeting Records
+
+4/7 - 1 Hour
+	- Discussed on how to distribute workload
+4/8 - Scrum Session in class
+4/15 - Scrum Session in class
+4/20 - 3 Hours 
+	- Worked on Maven configuration
+	- Discussed how to proceed in development
+4/22 - 1 hour outside of Class [Ivan/Stephen]
+	- Fixed maven for Stephen
+	- discussed Pcard method functionality
+4/24 - 2 hours outside of Class [Ivan/Giulio]
+	- worked on Add Expenses Popup Functionality - Giulio
+	- implemented sort/filter functionality for Expenses - Ivan
+4/28 - Team Meeting 
+	- Discussed what to do for the rest of the project
+4/29 - Scrum Session 
+	- worked on project for 3 hours
+5/3 - Team Meeting 30 minutes
+	- discussed final things to do for project
+
+
+----------------------------------------------------------------------
+
+Tasks
+- Create database tables based on ERD -Ivan [Done]
+- Populate database tables with dummy data - Ivan [Done]
+- Test robustness of schema with select statements - Ivan [Done]
+- Create GUI of program using JavaFXML SceneBuilder
+	- Login - Giulio / Ivan [Done] 4/12
+	- Main Menu - Ivan [Done] 4/12
+		- Messages - Ivan [Done] 4/19
+			- Create Message Popup - Ivan [Done] 4/19
+		- P Card - Ivan [Done]
+			- show P Card Details
+			- Request P Card [Done] 5/2
+			- Approve/Deny P Card Request [DONE] 5/2
+		- Expense - Ivan [Done 4/24]
+			- Add Expense Popup  [Done 4/24]
+			- Sort Expenses Popup [Done 4/24]
+		- Expense Request - Ivan [Done] 5/2
+			- Expense Request Popup for Approve Reason [Done] 5/2 
+			- Expense Request Popup for Deny Reason [Done] 5/2
+		- Construct Main Menu depending on User Role - Ivan [Done 4/15]
+			
+- Create classes for each role with functionality - Giulio [Done 4/12]
+	- implement way for program to retrieve data from DB for session use - Giulio/Ivan [Done 4/15] 
+- Implement code:
+	- Messages - Ivan [Done] 4/19
+		- Create Message Popup - Ivan [Done] 4/19
+	- PCard - Stephen
+		- Check if logged in user has p card or not - Stephen[DONE] 4/19
+		- Calculate Current Daily expenses for Daily Limit - Stephen [Done] 4/20	
+		- Calculate Current Monthly expenses for Monthly Limit - Stephen [Done] 4/20
+	- Expense - Giulio
+		- AddExpense Popup - Giulio [Done]
+		- Sort Expense - Ivan [Done]
+		- Calculate limit to yearly budget with unveristy + department policies
+	- Expense Request Reinbursment - Ivan 
+		- Fill table with pending/approved expenses w/ sorting
+		- Expense Request Popup for User Role
+		- Expense Request Popup for Deny reason
+		- Approve/Deny expense 
+	= PCard Requests
+		- Fill table with pending requests
+		- approve/deny requests
+		- make pcard details when approving
+- Get Maven working correctly - Ivan [Done] 4/20
+		
+
+- Considerations
+	encrypt passwords and store hashs in DB - Ivan [Done] 4/8
+	
